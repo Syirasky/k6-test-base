@@ -19,4 +19,11 @@ module.exports = {
     target: "web",
     externals: /k6(\/.*)?/,
     devtool: 'source-map',
+    resolve: {
+        fallback: {
+            "fs": false,
+            "path": false,
+            "os": false
+        },
+    }
 }
