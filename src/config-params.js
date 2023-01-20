@@ -1,7 +1,7 @@
 import { Rate}  from 'k6/metrics';
 
 // any url can set here
-const baseUrl = 'http://localhost/yii2-api/api/web/';
+const baseUrl = 'http://localhost/myapp';
 
 const formFailRate = new Rate('failed form fetches');
 const submitFailRate = new Rate('failed form submits');

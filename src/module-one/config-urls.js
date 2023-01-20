@@ -1,4 +1,4 @@
-import * as config from "./config-params.js";
+import * as config from "/src/config-params.js";
 
 // getting the form api 
 const urls = {
