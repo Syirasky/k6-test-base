@@ -1,7 +1,7 @@
 # # k6-test-base
 
 This is a demo base structure for k6 functional test with multiple scenario.
-My goal is to create a base structure for k6 functional test so that it is easy for the developers to have their test script written and tested according to the scenarios and functionality.
+This project purpose is to create a base structure for k6 functional test so that it is easy for the developers to have their test script written and tested according to the scenarios and functionality.
 
 ## Requirements
 Node.JS v12 and above <br>
