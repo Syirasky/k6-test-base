@@ -1,11 +1,12 @@
 import * as config_urls from "../module-one/config-urls.js";
 import http from 'k6/http';
-import config from "/src/config-params.js";
+import { Rate}  from 'k6/metrics';
 
-const formFailRate = config.formFailRate;
-const submitFailRate = config.submitFailRate;
 const email = "user1@mail.com";
 const password = "asdqwe";
+
+const formFailRate = new Rate('failed form fetches');
+const submitFailRate = new Rate('failed form submits');
 
 console.log("executing login");
 export function login(param1,param2){
