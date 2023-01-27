@@ -1,5 +1,5 @@
 // scenario two is just sleep and no sleep
-import * as another_test from '../module-one/another-test.js';
+import * as another_test from '../modules/module-one/another-test.js';
 
 export function test_scenario_two() {
     // execute this test

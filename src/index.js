@@ -1,10 +1,21 @@
-import * as scenario_one from "./test-scenario/scenario-one.js";
-import * as scenario_two from "./test-scenario/scenario-two.js";
+import * as scenario_one from "./test-scenarios/scenario-one.js";
+import * as scenario_two from "./test-scenarios/scenario-two.js";
 
 
 // this index.js contains multiple scenario. 
 // to run a specific scenario k6 run --env scenario=scenario_one
 // but since we using webpack to pack all the js we need to run k6 run --env scenario=scenario_one dist/test.main.js
+
+
+// functions for the scenarios
+export function exec_scenario_one() {
+  const response = scenario_one.test_scenario_one("hello","world");
+  console.log(response);
+}
+export function exec_scenario_two() {
+  const response = scenario_two.test_scenario_two();
+  console.log(response);
+}
 
 // specify all available scenarios
 let scenarios_list = {
@@ -35,17 +46,6 @@ export const options = {
     'http_req_duration{test_type:api}': ['p(95)<400']
   }
 };
-
-// functions for the scenarios
-export function exec_scenario_one() {
-  const response = scenario_one.test_scenario_one("hello","world");
-  console.log(response);
-}
-export function exec_scenario_two() {
-  const response = scenario_two.test_scenario_two();
-  console.log(response);
-}
-
 // this part where the scenario is selected . do not modify.
 if (__ENV.scenario) {
   // Use just a single scenario if `--env scenario=whatever` is used
